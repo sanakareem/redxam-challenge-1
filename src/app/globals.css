@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montagu+Slab:opsz,wght@16..144,100..700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.button-inner-shadow {
+  box-shadow: inset rgba(0, 0, 0, 0.4) 0px -9px 18px;
+}
+
+.button-glow {
+  box-shadow: 0 0 24px rgba(37, 233, 77, 0.1);
+}
+
+.button-glow:hover {
+  box-shadow: 0 0 24px rgba(37, 233, 77, 0.5);
+}
+
+.button-glow:hover .button-inner-shadow {
+  box-shadow: none;
+}
+
+.long-shadow {
+  filter: drop-shadow(4px 4px 4px rgb(0 0 0 / 0.35)) drop-shadow(8px 8px 4px rgb(0 0 0 / 0.3)) drop-shadow(12px 12px 4px rgb(0 0 0 / 0.1)) drop-shadow(16px 16px 4px rgb(0 0 0 / 0.05)) drop-shadow(22px 22px 4px rgb(0 0 0 / 0.1));
+}
+
+.instagram-card-gradient {
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><radialGradient id="radialGradient1" cx="13.71%" cy="110.29%" r="100.29%" fx="13.71%" fy="110.29%"><stop offset="0%" style="stop-color:%23FFDA55"/><stop offset="45.35%" style="stop-color:%23F03D63"/><stop offset="100%" style="stop-color:%23B72DC0"/></radialGradient><radialGradient id="radialGradient2" cx="7.43%" cy="6%" r="51.43%" fx="7.43%" fy="6%"><stop offset="24.84%" style="stop-color:%233C93E3"/><stop offset="100%" style="stop-color:rgba(60, 147, 227, 0)"/></radialGradient></defs><rect width="100%" height="100%" fill="url(%23radialGradient1)"/><rect width="100%" height="100%" fill="url(%23radialGradient2)" opacity="0.8"/></svg>') no-repeat center center;
+  background-size: cover;
+}
+
+.card-shadow {
+  box-shadow: inset rgba(255, 255, 255, 0.02) 0px 4px 8px,
+    inset rgba(0, 0, 0, 0.05) 0px -12px 24px;
+  ;
+  border: solid 1px #111111;
+}
+
+.tiktok-shadow {
+  box-shadow: inset rgba(255, 0, 79, 0.5) -3px -3px 0px, inset rgba(0, 253, 252, 0.7) 3px 3px 0px;
+}

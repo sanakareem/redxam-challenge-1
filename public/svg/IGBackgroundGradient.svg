@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <!-- Definisi gradient seperti sebelumnya -->
+    <radialGradient id="radialGradient1" cx="13.71%" cy="110.29%" r="100.29%">
+      <stop offset="0%" style="stop-color:#FFDA55"/>
+      <stop offset="45.35%" style="stop-color:#F03D63"/>
+      <stop offset="100%" style="stop-color:#B72DC0"/>
+    </radialGradient>
+
+    <radialGradient id="radialGradient2" cx="7.43%" cy="6%" r="51.43%">
+      <stop offset="24.84%" style="stop-color:#3C93E3"/>
+      <stop offset="100%" style="stop-color:rgba(60, 147, 227, 0)"/>
+    </radialGradient>
+  </defs>
+</svg>
