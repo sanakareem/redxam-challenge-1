@@ -1,7 +1,7 @@
 'use client';
 
-import MainButton from '@/app/components/MainButton';
-import Header from '@/app/layouts/Header';
+import MainButton from "../../components/MainButton"; 
+import Header from "../../layouts/Header";
 import { Avatar, Button } from '@nextui-org/react';
 import Image from 'next/image';
 import { useState } from 'react';
@@ -60,10 +60,13 @@ Experiment with Different Content Formats: Test different types of content (tuto
   ];
 
   const [currentRoadmap, setCurrentRoadmap] = useState(0);
+  const [isEndOfRoadmap, setIsEndOfRoadmap] = useState(false);
 
   const handleNextButton = () => {
-    if (currentRoadmap < 5) {
+    if (currentRoadmap < roadmapContent.length - 1) {
       setCurrentRoadmap(currentRoadmap + 1);
+    } else {
+      setIsEndOfRoadmap(true);
     }
   };
 
@@ -289,19 +292,34 @@ Experiment with Different Content Formats: Test different types of content (tuto
           </div>
           <div className="grow flex flex-col justify-between pt-[72px] pb-16 min-h-[80dvh] gap-24 xl:gap-0 xl:min-h-0 xl:h-auto">
             <div className="w-full flex flex-col items-center">
-              <div className="bg-[#151515] px-4 py-[10px] rounded-[52px] mb-[14px]">
-                <p className="text-sm font-montagu_slab">
-                  {roadmapContent[currentRoadmap].badge}
-                </p>
-              </div>
-              <div className="flex flex-col items-center w-full gap-[10px]">
-                <h1 className="font-semibold text-[52px] text-center">
-                  {roadmapContent[currentRoadmap].title}
-                </h1>
-                <p className="text-xs leading-[15px] text-center opacity-60 max-w-[460px]">
-                  {roadmapContent[currentRoadmap].description}
-                </p>
-              </div>
+            <div className="bg-[#151515] px-4 py-[10px] rounded-[52px] mb-[14px]">
+              {currentRoadmap >= 0 && currentRoadmap < roadmapContent.length && roadmapContent[currentRoadmap] ? (
+               <p className="text-sm font-montagu_slab">
+                {roadmapContent[currentRoadmap].badge}
+              </p>
+             ) : (
+              <p className="text-sm font-montagu_slab">Badge not available</p>
+              )}
+            </div>
+
+            <div className="flex flex-col items-center w-full gap-[10px]">
+  {currentRoadmap >= 0 && currentRoadmap < roadmapContent.length && roadmapContent[currentRoadmap] ? (
+    <>
+      <h1 className="font-semibold text-[52px] text-center">
+        {roadmapContent[currentRoadmap].title}
+      </h1>
+      <p className="text-xs leading-[15px] text-center opacity-60 max-w-[460px]">
+        {roadmapContent[currentRoadmap].description}
+      </p>
+    </>
+  ) : (
+    <>
+      <h1 className="font-semibold text-[52px] text-center">Title not available</h1>
+      <p className="text-xs leading-[15px] text-center opacity-60 max-w-[460px]">Description not available</p>
+    </>
+  )}
+</div>
+
               <div className="flex justify-center items-center gap-3 mt-[48px]">
                 {currentRoadmap > 0 && (
                   <MainButton
@@ -355,15 +373,16 @@ Experiment with Different Content Formats: Test different types of content (tuto
                 unoptimized={true}
               />
               <div className="relative z-10 rounded-full bg-[#111111] border-[1px] border-white border-opacity-40 flex justify-center items-center w-[96px] h-[96px] p-7 xl:p-0 xl:w-[132px] xl:h-[132px]">
-                <Image
-                  src={`/images/${roadmapContent[currentRoadmap].icon}`}
-                  alt="rocket"
-                  width="0"
-                  height="0"
-                  className="w-auto h-auto object-cover"
-                  unoptimized={true}
-                />
-              </div>
+  <Image
+    src={`/images/${roadmapContent[currentRoadmap]?.icon || 'default-icon.png'}`}
+    alt="rocket"
+    width="0"
+    height="0"
+    className="w-auto h-auto object-cover"
+    unoptimized={true}
+  />
+</div>
+
             </div>
           </div>
         </div>

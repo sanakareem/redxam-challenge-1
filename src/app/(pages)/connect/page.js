@@ -1,7 +1,7 @@
 "use client"
 
-import MainButton from "@/app/components/MainButton"
-import Header from "@/app/layouts/Header"
+import MainButton from "../../components/MainButton";
+import Header from "../../layouts/Header";
 import { AnimatePresence, motion } from "framer-motion"
 import Image from "next/image"
 import { useRouter } from "next/navigation"

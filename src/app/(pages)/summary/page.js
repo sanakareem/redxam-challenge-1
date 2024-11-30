@@ -1,8 +1,8 @@
 'use client';
 
-import InputText from '@/app/components/InputText';
-import MainButton from '@/app/components/MainButton';
-import Header from '@/app/layouts/Header';
+import Header from "../../layouts/Header"; 
+import InputText from "../../components/InputText"; 
+import MainButton from "../../components/MainButton"; 
 import { Avatar } from '@nextui-org/react';
 import Image from 'next/image';
 import Link from 'next/link';

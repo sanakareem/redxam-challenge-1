@@ -17,7 +17,7 @@ const InputText = ({
       type={type}
       helperText={helperText}
       multiline={multiline}
-      rows={multiline ? rows : false}
+      rows={multiline ? rows : undefined}
       className="w-full text-poppins"
       FormHelperTextProps={{
         className: 'px-[38px] mx-0 text-white text-[10px] opacity-60'
